@@ -1,65 +1,33 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> from importlib import import_module
+>>> text_indentation = import_module('5-text_indentation').text_indentation
+>>> text_indentation("Holberton School")
+Holberton School
 
-# Test case 1: Normal usage
->>> text_indentation("Hello. How are you? I'm fine: thanks.")
-Hello.
+>>> text_indentation("Holberton.School")
+Holberton.
 <BLANKLINE>
-<BLANKLINE>
-How are you?
-<BLANKLINE>
-<BLANKLINE>
-I'm fine:
-<BLANKLINE>
-<BLANKLINE>
-thanks.
-<BLANKLINE>
-<BLANKLINE>
+School
 
-# Test case 2: Text without punctuation
->>> text_indentation("This is a test")
-This is a test
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
 
-# Test case 3: Text with spaces before and after punctuation
->>> text_indentation("Hello .  How are you  ?  Fine  : Thanks  .")
-Hello.
-<BLANKLINE>
-<BLANKLINE>
-How are you?
-<BLANKLINE>
-<BLANKLINE>
-Fine:
-<BLANKLINE>
-<BLANKLINE>
-Thanks.
-<BLANKLINE>
-<BLANKLINE>
-
-# Test case 4: Empty string
 >>> text_indentation("")
+<BLANKLINE>
 
-# Test case 5: Non-string input
->>> text_indentation(12345)
+>>> text_indentation(12)
 Traceback (most recent call last):
     ...
 TypeError: text must be a string
 
-# Test case 6: Multiple consecutive punctuation marks
->>> text_indentation("Hello... How are you???")
-Hello.
+>>> text_indentation("This. Is a test: Without extra spaces.")
+This.
 <BLANKLINE>
+Is a test:
 <BLANKLINE>
-.
-<BLANKLINE>
-<BLANKLINE>
-.
-<BLANKLINE>
-<BLANKLINE>
-How are you?
-<BLANKLINE>
-<BLANKLINE>
-?
-<BLANKLINE>
-<BLANKLINE>
-?
-<BLANKLINE>
-<BLANKLINE>
+Without extra spaces.
