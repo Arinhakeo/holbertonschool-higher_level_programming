@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Module pour l'exercice 1."""
+"""Module définissant la classe MyList."""
 
-# Insérez le code de l'exercice 1 ici
 
-if __name__ == "__main__":
-    # Code de test
-    pass
+class MyList(list):
+    """Classe héritant de list avec méthode d'impression triée."""
+
+    def print_sorted(self):
+        """Imprime la liste triée."""
+        print(sorted(self))

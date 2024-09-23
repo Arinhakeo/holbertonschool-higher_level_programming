@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Module pour l'exercice 6."""
+"""Module définissant la classe BaseGeometry."""
 
-# Insérez le code de l'exercice 6 ici
 
-if __name__ == "__main__":
-    # Code de test
-    pass
+class BaseGeometry:
+    """Classe de base pour la géométrie."""
+
+    def area(self):
+        """Calcule l'aire."""
+        raise Exception("area() is not implemented")

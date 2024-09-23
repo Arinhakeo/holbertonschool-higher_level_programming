@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-"""Module pour l'exercice 10."""
+"""Module définissant la classe Square."""
 
-# Insérez le code de l'exercice 10 ici
 
-if __name__ == "__main__":
-    # Code de test
-    pass
+Rectangle = __import__('9-rectangle').Rectangle
+
+class Square(Rectangle):
+    """Classe représentant un carré."""
+
+    def __init__(self, size):
+        """Initialise un carré."""
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size

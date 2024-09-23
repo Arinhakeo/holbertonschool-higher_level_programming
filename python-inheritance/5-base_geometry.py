@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""Module pour l'exercice 5."""
+"""Module définissant la classe BaseGeometry."""
 
-# Insérez le code de l'exercice 5 ici
 
-if __name__ == "__main__":
-    # Code de test
+class BaseGeometry:
+    """Classe de base pour la géométrie."""
     pass
