@@ -1,4 +1,5 @@
-from task_03_countediterator import CountedIterator
+#!/usr/bin/env python3f
+rom task_03_countediterator import CountedIterator
 
 data = [1, 2, 3, 4]
 counted_iter = CountedIterator(data)

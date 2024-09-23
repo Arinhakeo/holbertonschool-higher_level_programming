@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from task_02_verboselist import VerboseList
 
 vl = VerboseList([1, 2, 3])
