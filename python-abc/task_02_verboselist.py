@@ -1,58 +1,55 @@
-#!/usr/bin/env python3
-"""Classes Shape, Circle, Rectangle et fonction shape_info."""
+#!/usr/bin/python3
+"""Module ListeVerbose
 
-from abc import ABC, abstractmethod
-import math
-
-
-class Shape(ABC):
-    """Classe abstraite Shape."""
-
-    @abstractmethod
-    def area(self):
-        """Méthode abstraite aire."""
-        pass
-
-    @abstractmethod
-    def perimeter(self):
-        """Méthode abstraite périmètre."""
-        pass
+Ce module définit la classe ListeVerbose, qui étend la classe list native
+et affiche des messages pour certaines opérations de liste.
+"""
 
 
-class Circle(Shape):
-    """Classe Circle."""
+class ListeVerbose(list):
+    """Classe ListeVerbose
 
-    def __init__(self, radius):
-        """Initialisation avec rayon."""
-        self.radius = radius
+    Étend la classe list native et affiche des messages pour les opérations
+    ajouter, étendre, supprimer et retirer.
+    """
 
-    def area(self):
-        """Calcul de l'aire."""
-        return math.pi * self.radius ** 2
+    def ajouter(self, element):
+        """Ajoute un élément à la liste et affiche un message.
 
-    def perimeter(self):
-        """Calcul du périmètre."""
-        return 2 * math.pi * self.radius
+        Args:
+            element: L'élément à ajouter à la liste.
+        """
+        super().append(element)
+        print(f"Ajouté [{element}] à la liste.")
 
+    def etendre(self, iterable):
+        """Étend la liste avec les éléments de l'itérable et affiche un message.
 
-class Rectangle(Shape):
-    """Classe Rectangle."""
+        Args:
+            iterable: Un itérable dont les éléments seront ajoutés à la liste.
+        """
+        nombre = len(iterable)
+        super().extend(iterable)
+        print(f"Étendu la liste avec [{nombre}] éléments.")
 
-    def __init__(self, width, height):
-        """Initialisation avec largeur et hauteur."""
-        self.width = width
-        self.height = height
+    def supprimer(self, element):
+        """Supprime la première occurrence de l'élément et affiche un message.
 
-    def area(self):
-        """Calcul de l'aire."""
-        return self.width * self.height
+        Args:
+            element: L'élément à supprimer de la liste.
+        """
+        super().remove(element)
+        print(f"Supprimé [{element}] de la liste.")
 
-    def perimeter(self):
-        """Calcul du périmètre."""
-        return 2 * (self.width + self.height)
+    def retirer(self, index=-1):
+        """Retire et renvoie l'élément à l'index donné et affiche un message.
 
+        Args:
+            index: L'index de l'élément à retirer (par défaut, le dernier).
 
-def shape_info(shape):
-    """Affiche l'aire et le périmètre d'une forme."""
-    print(f"Area: {shape.area()}")
-    print(f"Perimeter: {shape.perimeter()}")
+        Returns:
+            L'élément qui a été retiré.
+        """
+        element = super().pop(index)
+        print(f"Retiré [{element}] de la liste.")
+        return element

@@ -1,21 +1,57 @@
-#!/usr/bin/env python3
-"""Classe CountedIterator."""
+#!/usr/bin/python3
+"""Module PoissonVolant
+
+Ce module définit les classes Poisson, Oiseau et PoissonVolant,
+démontrant l'héritage multiple.
+"""
 
 
-class CountedIterator:
-    """Itérateur avec compteur."""
+class Poisson:
+    """Classe Poisson représentant un poisson."""
 
-    def __init__(self, iterable):
-        """Initialisation."""
-        self.iterator = iter(iterable)
-        self.count = 0
+    def nager(self):
+        """Affiche que le poisson nage."""
+        print("Le poisson nage")
 
-    def __next__(self):
-        """Renvoie l'élément suivant."""
-        item = next(self.iterator)
-        self.count += 1
-        return item
+    def habitat(self):
+        """Affiche l'habitat du poisson."""
+        print("Le poisson vit dans l'eau")
 
-    def get_count(self):
-        """Renvoie le nombre d'éléments itérés."""
-        return self.count
+
+class Oiseau:
+    """Classe Oiseau représentant un oiseau."""
+
+    def voler(self):
+        """Affiche que l'oiseau vole."""
+        print("L'oiseau vole")
+
+    def habitat(self):
+        """Affiche l'habitat de l'oiseau."""
+        print("L'oiseau vit dans le ciel")
+
+
+class PoissonVolant(Poisson, Oiseau):
+    """Classe PoissonVolant héritant de Poisson et Oiseau."""
+
+    def nager(self):
+        """Affiche que le poisson volant nage."""
+        print("Le poisson volant nage !")
+
+    def voler(self):
+        """Affiche que le poisson volant plane."""
+        print("Le poisson volant plane !")
+
+    def habitat(self):
+        """Affiche l'habitat du poisson volant."""
+        print("Le poisson volant vit dans l'eau et le ciel !")
+
+
+if __name__ == "__main__":
+    # Test des fonctionnalités de PoissonVolant
+    poisson_volant = PoissonVolant()
+    poisson_volant.nager()
+    poisson_volant.voler()
+    poisson_volant.habitat()
+
+    # Affichage de l'ordre de résolution des méthodes (MRO)
+    print(PoissonVolant.mro())

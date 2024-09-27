@@ -1,42 +1,38 @@
-#!/usr/bin/env python3
-"""Classes Fish, Bird et FlyingFish."""
+#!/usr/bin/python3
+"""Module Mixins
+
+Ce module démontre l'utilisation des Mixins en Python avec deux classes
+de mixin et une classe Dragon qui les utilise.
+"""
 
 
-class Fish:
-    """Classe Fish."""
+class MixinNager:
+    """Mixin fournissant la fonctionnalité de nage."""
 
-    def swim(self):
-        """Nage."""
-        print("The fish is swimming")
-
-    def habitat(self):
-        """Habitat."""
-        print("The fish lives in water")
+    def nager(self):
+        """Affiche que la créature nage."""
+        print("La créature nage !")
 
 
-class Bird:
-    """Classe Bird."""
+class MixinVoler:
+    """Mixin fournissant la fonctionnalité de vol."""
 
-    def fly(self):
-        """Vole."""
-        print("The bird is flying")
-
-    def habitat(self):
-        """Habitat."""
-        print("The bird lives in the sky")
+    def voler(self):
+        """Affiche que la créature vole."""
+        print("La créature vole !")
 
 
-class FlyingFish(Fish, Bird):
-    """Classe FlyingFish."""
+class Dragon(MixinNager, MixinVoler):
+    """Classe Dragon héritant de MixinNager et MixinVoler."""
 
-    def fly(self):
-        """Vole."""
-        print("The flying fish is soaring!")
+    def rugir(self):
+        """Affiche que le dragon rugit."""
+        print("Le dragon rugit !")
 
-    def swim(self):
-        """Nage."""
-        print("The flying fish is swimming!")
 
-    def habitat(self):
-        """Habitat."""
-        print("The flying fish lives both in water and the sky!")
+if __name__ == "__main__":
+    # Test des fonctionnalités du Dragon
+    draco = Dragon()
+    draco.nager()  # Affiche: La créature nage !
+    draco.voler()  # Affiche: La créature vole !
+    draco.rugir()  # Affiche: Le dragon rugit !
