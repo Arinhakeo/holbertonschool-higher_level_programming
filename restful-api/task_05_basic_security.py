@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+this module contains sample api to authetify users and admins
+"""
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -7,7 +9,7 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
-app.config['JWT_SECRET_KEY'] = 'your-secret-key'  # Changez ceci en production!
+app.config['JWT_SECRET_KEY'] = 'your-secret-key'
 jwt = JWTManager(app)
 
 users = {
