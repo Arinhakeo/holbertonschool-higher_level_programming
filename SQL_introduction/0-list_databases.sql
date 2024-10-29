@@ -1,1 +1,2 @@
-SELECT id, name FROM table;
+-- Script that lists all databases of your MySQL server
+SHOW DATABASES;
