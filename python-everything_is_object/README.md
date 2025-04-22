@@ -592,4 +592,4 @@ When done, please add all urls below (blog post, LinkedIn post, etc.)
 
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 
-Add URLs here:
+Add URLs here: https://medium.com/@9295/python3-mutable-immutable-everything-is-object-480c6f731399
